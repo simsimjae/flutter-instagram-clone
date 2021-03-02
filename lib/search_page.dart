@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_clone/create_page.dart';
 
 class SearchPage extends StatefulWidget {
   @override
@@ -8,7 +9,17 @@ class SearchPage extends StatefulWidget {
 class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: _buildBody());
+    return Scaffold(
+      body: _buildBody(),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.create),
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => CreatePage()));
+        },
+        backgroundColor: Colors.blue,
+      ),
+    );
   }
 
   Widget _buildBody() {
