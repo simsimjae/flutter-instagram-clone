@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_clone/account_page.dart';
 import 'package:instagram_clone/home_page.dart';
 
 class TabPage extends StatefulWidget {
@@ -11,22 +12,16 @@ class _TabPageState extends State<TabPage> {
 
   @override
   Widget build(BuildContext context) {
-    List items = <Widget>[HomePage(), Text('Page 2'), Text('Page 3')];
+    List items = <Widget>[HomePage(), Text('Page 2'), AccountPage()];
 
     return Scaffold(
       body: Center(child: items[_selectedIndex]),
-      bottomNavigationBar: BottomNavigationBar(
-          fixedColor: Colors.black,
-          currentIndex: _selectedIndex,
-          onTap: _onTap,
-          items: <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-                icon: Icon(Icons.home), title: Text('Home')),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.search), title: Text('Search')),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.account_circle), title: Text('Account'))
-          ]),
+      bottomNavigationBar:
+          BottomNavigationBar(fixedColor: Colors.black, currentIndex: _selectedIndex, onTap: _onTap, items: <BottomNavigationBarItem>[
+        BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('Home')),
+        BottomNavigationBarItem(icon: Icon(Icons.search), title: Text('Search')),
+        BottomNavigationBarItem(icon: Icon(Icons.account_circle), title: Text('Account'))
+      ]),
     );
   }
 
